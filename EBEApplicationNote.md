@@ -19,8 +19,8 @@ The downloaded reference design can be modified according to the users specifica
 
 # Table of contents
 * [1 - Workflow](./Chapter-1-Workflow.md)
-    - [1.1 Modules euqipped with Xilinx SoC](Chapter-1-Workflow.md#11-Modules-equipped-with-Xilinx-SoC)
-   - [1.2 Modules euqipped with Intel SoC](Chapter-1-Workflow.md#12-Modules-equipped-with-Intel-SoC)
+    - [1.1 Modules equipped with Xilinx SoC](Chapter-1-Workflow.md#11---modules-equipped-with-xilinx-soc)
+   - [1.2 Modules equipped with Intel SoC](Chapter-1-Workflow.md#12---modules-equipped-with-intel-soc)
    - [1.3 Additional information](Chapter-1-Workflow.md#13-additional-information)
 * [2 - U-Boot](./Chapter-2-U-Boot.md)
     - [2.1 Bootloader](Chapter-2-U-Boot.md#21-bootloader)

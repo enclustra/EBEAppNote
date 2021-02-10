@@ -79,7 +79,7 @@ The following trees show the folder structure starting from the top level direct
                     └── Makefile
 ```
 ## 4.3 - Configuration
-Similar to the Linux kernel (see section [3.2](Chapter-3-Linux-Kernel.md#32-configuration)), there are several ways to generate a configuration for Buildroot. All these configuration tools provide a graphical user interface.
+Similar to the Linux kernel (see section [3.2](Chapter-3-Linux-Kernel.md#32---configuration)), there are several ways to generate a configuration for Buildroot. All these configuration tools provide a graphical user interface.
 
 | Command         | Description                                |
 |-----------------|--------------------------------------------|
@@ -92,10 +92,10 @@ This section only explains the usage of `make menuconfig`, since it is commonly 
 ```
 make menuconfig
 ```
-See section [3.2](Chapter-3-Linux-Kernel.md#32-configuration) for more information about the configuration menu. After a configuration was saved, the entire Buildroot configuration is stored in the `.config` file located in the Buildroot source directory.
+See section [3.2](Chapter-3-Linux-Kernel.md#32---configuration) for more information about the configuration menu. After a configuration was saved, the entire Buildroot configuration is stored in the `.config` file located in the Buildroot source directory.
 
 ### 4.3.1 Defconfig files
-Similar to the Linux kernel defconfig files (see section [3.2](Chapter-3-Linux-Kernel.md#32-configuration)), Buildroot supports defconfig files as well. All defconfig files can be found in `<path_to_build_environment>/sources/buildroot-rootfs/configs` directory. The following list shows all defconfig files used in the Enclustra build environment for the Enclustra SoC modules.
+Similar to the Linux kernel defconfig files (see section [3.2](Chapter-3-Linux-Kernel.md#32---configuration)), Buildroot supports defconfig files as well. All defconfig files can be found in `<path_to_build_environment>/sources/buildroot-rootfs/configs` directory. The following list shows all defconfig files used in the Enclustra build environment for the Enclustra SoC modules.
 
 | File name                         | Description                                                  |
 |-----------------------------------|--------------------------------------------------------------|
@@ -120,7 +120,7 @@ cd <path_to_build_environment>/sources/buildroot−rootfs
 make <module>_defconfig
 make EBE_OVERLAYS=<overlay_directory>
 ```
-Note that `EBE_OVERLAYS` is optional. It can be used to copy an overlay directory to the rootfs using a post build script. In the build environment build script, the overlay directory is set to the kernel module directory (see section [3.2](Chapter-3-Linux-Kernel.md#32-configuration)). The generated rootfs can be found in the `<path_to_build_environment>/sources/buildrootrootfs/output/images` directory.
+Note that `EBE_OVERLAYS` is optional. It can be used to copy an overlay directory to the rootfs using a post build script. In the build environment build script, the overlay directory is set to the kernel module directory (see section [3.2](Chapter-3-Linux-Kernel.md#32---configuration)). The generated rootfs can be found in the `<path_to_build_environment>/sources/buildrootrootfs/output/images` directory.
 
 ## 4.4 - Toolchain
 Buildroot builds its own toolchain that is used to cross compile all applications in the root file system. This toolchain can be found in `<path_to_build_environment>/sources/buildroot-rootfs/output/host/usr/bin` directory. This toolchain is recommended for building user applications because the referenced libraries are already present on the target file system.
@@ -220,7 +220,7 @@ It is recommended to use the toolchain built by Buildroot to cross compile an ap
 * Click `OK` to save the settings
 * Hit Ctrl-B to build the application
 * The built binary can be found in the selected workspace folder (e.g. `<workspace>/helloworld/Debug/helloworld.elf`)
-* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49-copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45-file-system-modification)
+* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49---copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45---file-system-modification)
 * On the target Linux change the permissions of the application to be able to execute it (`chmod +x helloworld.elf`)
 * Start the hello world application by typing `./helloworld.elf`
 ### 4.7.2 - Create a Hello World application in Xilinx SDK on Windows
@@ -251,7 +251,7 @@ When an application is cross compiled on a Windows host machine, the toolchain g
 * Click `Next >`, select `Linux Hello World` as template and click `Finish`
 * Hit Ctrl-B to build the project
 * The built binary can be found in the selected workspace folder (e.g. `<workspace>/helloworld/Debug/helloworld.elf`)
-* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49-copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45-file-system-modification)
+* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49---copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45---file-system-modification)
 * On the target Linux change the permissions of the application to be able to execute it (`chmod +x helloworld.elf`)
 * Start the helloworld application by typing `./helloworld.elf`
 
@@ -274,7 +274,7 @@ It is recommended to use the toolchain built by Buildroot to cross compile an ap
 * Click `OK` to save the settings
 * Hit Ctrl-B to build the application
 * The built binary can be found in the selected workspace folder (e.g. `<workspace>/helloworld/Debug/helloworld`)
-* Copy the newly generated binary file to the target file system as described in section [4.9](Chapter-4-Buildroot.md#49-copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45-file-system-modification)
+* Copy the newly generated binary file to the target file system as described in section [4.9](Chapter-4-Buildroot.md#49---copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45---file-system-modification)
 * On the target Linux: Change the permissions of the application to be able to execute it (`chmod +x helloworld`)
 * Start the hello world application by typing `./helloworld`
 
@@ -282,9 +282,8 @@ It is recommended to use the toolchain built by Buildroot to cross compile an ap
 When an application is cross compiled on a Windows host machine, the toolchain generated by Buildroot cannot be used. The toolchain provided by Intel SoC EDS uses hard floating point arithmetic. Therefore the target root file system needs to be built also with a hard float toolchain. The following example shows how to create and compile a hello world example project in ARM DS-5.
 
 **Prepare Root File System and Toolchain**
-
 * Create a Linux build in the Enclustra build environment
-* Add hard floating point arithmetic support. Open the configuration menu by typing `make menuconfig` in Buildroot source directory (see section 4.3). Navigate to `Target Options` submenu and enable `Enable VFP extension support`. For `Target ABI` settings, select `EABIhf`.
+* Add hard floating point arithmetic support. Open the configuration menu by typing `make menuconfig` in Buildroot source directory (see section [4.3](Chapter-4-Buildroot.md#43---configuration)). Navigate to `Target Options` submenu and enable `Enable VFP extension support`. For `Target ABI` settings, select `EABIhf`.
 * Navigate to the `Toolchain` submenu and enable `Enable C++ support`
 * Exit configuration menu and save changed configuration
 * Clean all built files by typing `make clean` in Buildroot source directory
@@ -303,13 +302,13 @@ When an application is cross compiled on a Windows host machine, the toolchain g
 * Click `Finish`
 * Hit Ctrl-B to build the project
 * The built binary can be found in the selected workspace folder (e.g. <workspace>/helloworld/Debug/helloworld)
-* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49-copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45-file-system-modification)
+* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49---copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45---file-system-modification)
 * On the target Linux: Change the permissions of the application to be able to execute it (`chmod +x helloworld`)
 * Start the helloworld application by typing `./helloworld`
 
 ### 4.7.5 - Create a Hello World application without a SDK
 The toolchain built by Buildroot, located in the `<path_to_build_environment>/sources/buildroot-rootfs/output/host/usr/bin` directory, can be used to compile an application in Linux without having to use a software development kit. The application can be compiled by using a simple Makefile. The procedure is described below.
-* Create a simple hello world application as described in section [4.7](Chapter-4-Buildroot.md#47-create-a-custom-application) and name it `helloworld.c`
+* Create a simple hello world application as described in section [4.7](Chapter-4-Buildroot.md#47---create-a-custom-application) and name it `helloworld.c`
 * Create a Makefile as described below and store it in the same directory as the helloworld.c source file.
   ```
   ARCH=arm
@@ -328,7 +327,7 @@ The toolchain built by Buildroot, located in the `<path_to_build_environment>/so
 * Set the `ARCH` variable inside the Makefile according to the architecture of the target module (`arm` for Enclustra modules equipped with Intel or Xilinx Zynq-7000 SoC or `arm64` for Enclustra modules equipped with Xilinx Zynq Ultrascale+ MPSoC)
 * Set the cross compile prefix inside the Makefile to the correct value
 * Navigate to the directory containing the source file and the Makefile, and type `make` to generate the executable binary
-* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49-copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45-file-system-modification)
+* Copy the newly generated binary file to the target filesystem as described in section [4.9](Chapter-4-Buildroot.md#49---copy-files-to-root-file-system) or section [4.5](Chapter-4-Buildroot.md#45---file-system-modification)
 * On the target Linux: Change the permissions of the application to be able to execute it (`chmod +x helloworld`)
 * Start the helloworld application by typing `./helloworld`
 ### 4.7.6 - Add custom applications as package
@@ -338,7 +337,7 @@ A custom application can be added as a package to Buildroot. This allows the use
   cd <path_to_build_environment>/sources/buildroot−rootfs/package/
   mkdir helloworld
   ```
-* Create a simple hello world application as described in section [4.7](Chapter-4-Buildroot.md#47-create-a-custom-application) and name it `helloworld.c`
+* Create a simple hello world application as described in section [4.7](Chapter-4-Buildroot.md#47---create-a-custom-application) and name it `helloworld.c`
 * Create the `helloworld.mk` file with following content:
   ```mk
   ################################################################################
@@ -377,7 +376,7 @@ A custom application can be added as a package to Buildroot. This allows the use
   clean:
   rm −f *.o helloworld
   ```
-* Create a new file `Config.in` with following content. The syntax is the same as for Linux kernel Kconfig files (see section [3.4](Chapter-3-Linux-Kernel.md#34-create-and-add-a-custom-driver)).
+* Create a new file `Config.in` with following content. The syntax is the same as for Linux kernel Kconfig files (see section [3.4](Chapter-3-Linux-Kernel.md#34---create-and-add-a-custom-driver)).
   ```
   config BR2_PACKAGE_HELLOWORLD
     bool ”helloworld”
@@ -397,7 +396,7 @@ Xilinx provides a System Debugger (TCF) which needs a software (tcf-agent) runni
 
 **Prepare Target Linux**
 
-* Create a Linux build as described in section [4.7.2](Chapter-4-Buildroot.md#47-create-a-custom-application)
+* Create a Linux build as described in section [4.7.2](Chapter-4-Buildroot.md#472---create-a-hello-world-application-in-xilinx-sdk-on-windows)
 * Connect the Enclustra module via Ethernet to the host machine
 * Boot Linux on the module
 * Configure an IP address. For example:
@@ -412,7 +411,7 @@ Xilinx provides a System Debugger (TCF) which needs a software (tcf-agent) runni
 **Create Application and Start Debugging**
 
 * Open Xilinx SDK
-* Create a Linux application as described in section [4.7.2](Chapter-4-Buildroot.md#47-create-a-custom-application)
+* Create a Linux application as described in section [4.7.2](Chapter-4-Buildroot.md#472---create-a-hello-world-application-in-xilinx-sdk-on-windows)
 * Open `Run -> Debug Configurations`
 * Click `Xilinx C/C++ application (System Debugger)` to create a new configuration
 * Select the `Target Setup` tab
@@ -430,10 +429,10 @@ The following example provides instructions on how to start a debugging session 
 
 **Prepare Target Linux**
 
-* Create a Linux build with hard floating point arithmetic support as described in section [4.7.4](Chapter-4-Buildroot.md#47-create-a-custom-application)
+* Create a Linux build with hard floating point arithmetic support as described in section [4.7.4](Chapter-4-Buildroot.md#474---create-a-hello-world-application-in-intel-arm-ds-5-on-windows)
 * Connect the Enclustra module via Ethernet to the host machine
 * Boot Linux on the target module
-* Create a new user as described in section 4.10.1. This user will be used for login via SSH because root user is not permitted.
+* Create a new user as described in section [4.10.1](Chapter-4-Buildroot.md#4101---create-a-new-user). This user will be used for login via SSH because root user is not permitted.
 * Restart the SSH daemon to initialize with the newly created user or reboot Linux
   ```
   start−stop−daemon −K −x /usr/sbin/sshd
@@ -448,7 +447,7 @@ The following example provides instructions on how to start a debugging session 
   ```
   eclipse
   ```
-* Create a Linux application as described in section [4.7.4](Chapter-4-Buildroot.md#47-create-a-custom-application)
+* Create a Linux application as described in section [4.7.4](Chapter-4-Buildroot.md#474---create-a-hello-world-application-in-intel-arm-ds-5-on-windows)
 * Open debug view: `Window -> Open Perspective -> DS-5 Debug`
 * In `Remote Systems` tab: Click on `Define a connection to remote system`
 * A new window opens. Select `SSH Only` and click `Next >`
@@ -461,7 +460,7 @@ The following example provides instructions on how to start a debugging session 
 * Press `Apply` and `Debug` to start debugging
 
 ## 4.9 - Copy files to root file system
-This section describes several ways to copy files from a host machine to the target Linux. Besides the methods listed here, files can also be copied directly to the root file system when the rootfs is been built (see section [4.5](Chapter-4-Buildroot.md#45-file-system-modification)).
+This section describes several ways to copy files from a host machine to the target Linux. Besides the methods listed here, files can also be copied directly to the root file system when the rootfs is been built (see section [4.5](Chapter-4-Buildroot.md#45---file-system-modification)).
 
 ### 4.9.1 - TFTP
 **TFTP Client on Target Linux**

@@ -235,7 +235,7 @@ After the architecture variable was set, the configuration menu can be opened by
 ```
 make menuconfig
 ```
-First we need to find out the location of the driver. `/` can be used to open the search menu. By typing `ISL12022` and pressing enter the search result is shown. Apart from the requested location, the result also shows potential dependencies, which need to be valid in order to be able to activate the driver (see section [3.4.3](343AddACustomKernelModuleToTheConfigurationGUI) for more information). As seen in the screenshot below, the result shows that the driver of the ISL12022 can be found at subsection `Device Drivers -> Real Time Clock`.
+First we need to find out the location of the driver. `/` can be used to open the search menu. By typing `ISL12022` and pressing enter the search result is shown. Apart from the requested location, the result also shows potential dependencies, which need to be valid in order to be able to activate the driver (see section [3.4.3](#343AddACustomKernelModuleToTheConfigurationGUI) for more information). As seen in the screenshot below, the result shows that the driver of the ISL12022 can be found at subsection `Device Drivers -> Real Time Clock`.
 
 ![Search result of `make menuconfig`](./figures/Chapter-3-3-1_Figure-3_SearchResultOfmakemenuconfig.png)
 
@@ -348,7 +348,7 @@ modules with Xilinx SoC. If modules with Intel SoC are used, then `xilinx-linux`
 
 In this example the driver is added to the Linux staging tree, which is a common place to store drivers which are in development phase. The staging tree contains already different drivers that are not ready to be merged into the main portion of the kernel for various technical reasons.
 
-* Create a new folder `helloWorld` in the `<path_to_build_environment>/sources/xilinx-linux/drivers/staging` directory and copy the source file (`hello_world.c`) of the driver (see section [3.4.1](#341HelloWorldKernelModule)) to the newly created directory. Refer to section [3.4](Chapter-3-Linux-Kernel.md#34-create-and-add-a-custom-driver) for details on how to create a driver.
+* Create a new folder `helloWorld` in the `<path_to_build_environment>/sources/xilinx-linux/drivers/staging` directory and copy the source file (`hello_world.c`) of the driver (see section [3.4.1](#341HelloWorldKernelModule)) to the newly created directory. Refer to section [3.4](Chapter-3-Linux-Kernel.md#34---create-and-add-a-custom-driver) for details on how to create a driver.
 * Create a new file `Kconfig` in the newly created `helloWorld` directory with the following content:
   ```
   config HELLO_WORLD
@@ -380,7 +380,7 @@ In this example the driver is added to the Linux staging tree, which is a common
 When `make menuconfig` is called with the shown modification in this section, the newly added driver can be found in `drivers -> staging` and can be selected to be compiled into the kernel binary or built as a loadable module.
 
 ### <a name="344LoadTheKernelModule"></a>3.4.4 - Load the kernel module
-If the kernel modules was built standalone as described in section [3.4.2](#342BuildTheKernelModuleStandalone), the binary file needs to be copied to the rootfs of the Enclustra module via SSH or TFTP as described in section [4.9](Chapter-4-Buildroot.md#49-copy-files-to-root-file-system). Once the binary file is present on the root file system, it can be inserted by following command:
+If the kernel modules was built standalone as described in section [3.4.2](#342BuildTheKernelModuleStandalone), the binary file needs to be copied to the rootfs of the Enclustra module via SSH or TFTP as described in section [4.9](Chapter-4-Buildroot.md#49---copy-files-to-root-file-system). Once the binary file is present on the root file system, it can be inserted by following command:
 ```
 insmod hello_world.ko
 ```

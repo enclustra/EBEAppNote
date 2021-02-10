@@ -73,11 +73,11 @@ The following trees show the folder structure starting from top level directory 
             └── u-boot
 ```
 ## 2.3 - Configuration
-U-Boot can be customized similarly to the Linux kernel (see section [3.2](Chapter-3-Linux-Kernel.md#32-configuration)) or Buildroot (see section [4.3](Chapter-4-Buildroot.md#43-configuration)). The U-Boot sources can be found in the `<path_to_build_environment>/sources/xilinx-uboot/` or `<path_to_build_environment>/sources/altera-uboot/` directory depending on the vendor of the SoC present on the target module. The configuration menu can be started by navigating to the U-Boot source directory and typing the following line:
+U-Boot can be customized similarly to the Linux kernel (see section [3.2](Chapter-3-Linux-Kernel.md#32---configuration)) or Buildroot (see section [4.3](Chapter-4-Buildroot.md#43---configuration)). The U-Boot sources can be found in the `<path_to_build_environment>/sources/xilinx-uboot/` or `<path_to_build_environment>/sources/altera-uboot/` directory depending on the vendor of the SoC present on the target module. The configuration menu can be started by navigating to the U-Boot source directory and typing the following line:
 ```
 make menuconfig
 ```
-See section [3.2](Chapter-3-Linux-Kernel.md#32-configuration) for more information about the configuration menu. After the configuration was saved, the entire U-Boot configuration is stored in the `.config` file located in the U-Boot source directory.
+See section [3.2](Chapter-3-Linux-Kernel.md#32---configuration) for more information about the configuration menu. After the configuration was saved, the entire U-Boot configuration is stored in the `.config` file located in the U-Boot source directory.
 
 ### <a name="232DefconfigFiles"></a> 2.3.1 Defconfig files
 The initial configuration for U-Boot is stored in defconfig files. All defconfig files can be found in the `<path_to_build_environment>/sources/xilinx-uboot/configs` directory or the `<path_to_build_environment>/sources/altera-uboot/configs` directory. The following list shows all defconfig files used in the Enclustra build environment for the Enclustra SoC modules.
@@ -184,7 +184,7 @@ make
 If the build was successful, the newly generated U-Boot binary can be found in the U-Boot source directory.
 
 ## 2.4 - Device tree
-U-Boot provides the option to configure its devices using a device tree instead of a static configuration. The used device tree source files use the same syntax as the device tree files used for the Linux kernel (see section [3.5](Chapter-3-Linux-Kernel.md#35-deviec-tree)).
+U-Boot provides the option to configure its devices using a device tree instead of a static configuration. The used device tree source files use the same syntax as the device tree files used for the Linux kernel (see section [3.5](Chapter-3-Linux-Kernel.md#35---device-tree)).
 
 In contrast to the Linux kernel, U-Boot embeds the device tree binary in its image (`CONFIG_OF_EMBED` setting). The used device tree source file is set in the U-Boot configuration in `CONFIG_DEFAULT_DEVICE_TREE` setting. 
 
@@ -217,7 +217,7 @@ After a valid boot image has been created and loaded to the desired storage devi
 
 The U-Boot command line interface can be entered during booting by pressing any key while `Hit any key to stop autoboot` is output. By default the wait time is set to 2 seconds. To disable command line interface access and to decrease boot time, the wait time can be set to zero. This can be changed either by changing the environment variable `bootdelay` or in the configuration menu by changing the setting `delay in seconds before automatically booting`.
 
-The available commands in the command line interface depend on the configuration. To see all enabled commands, check the `Command line interface` submenu in the configuration menu (see section [2.3](Chapter-2-U-Boot.md#23-configuration)).
+The available commands in the command line interface depend on the configuration. To see all enabled commands, check the `Command line interface` submenu in the configuration menu (see section [2.3](Chapter-2-U-Boot.md#23---configuration)).
 
 ## 2.6 - Environment
 Environment variables are used to store various settings. For example the IP address of the module is stored in the `ipaddr` variable. Furthermore, U-Boot provides the ability to store commands in environment variables. The environment is always stored on the boot partition of the selected boot memory or at a certain offset of the selected boot memory. If no stored environment is present, U-Boot loads its default configuration.
@@ -247,7 +247,7 @@ Multiple commands can be stored in a variable, separated by a `;`. To set the co
 setenv <variable> <command1>\;<command2>\;<command3>
 run <variable>
 ```
-The commands for booting Linux are always stored in the `bootcmd` environment variable. In the Enclustra build environment this executes the boot script (see section [2.7](Chapter-2-U-Boot.md#27-boot-scripts)). To boot Linux from the command line interface, the following command can be used:
+The commands for booting Linux are always stored in the `bootcmd` environment variable. In the Enclustra build environment this executes the boot script (see section [2.7](Chapter-2-U-Boot.md#27---boot-scripts)). To boot Linux from the command line interface, the following command can be used:
 ```
 run bootcmd
 ```
@@ -290,7 +290,7 @@ The following lists show all used boot scripts and their application. The boot s
 | usbboot                                   | USB boot with persistent rootfs                      |
 
 ### <a name="271CreateOwnScripts"></a>2.7.1 Create own scripts
-If custom commands need to be executed before Linux is booting, the boot scripts shown in section [2.7](Chapter-2-U-Boot.md#27-boot-scripts) can be modified. It is also possible to generate a script from scratch and execute it in U-Boot.
+If custom commands need to be executed before Linux is booting, the boot scripts shown in section [2.7](Chapter-2-U-Boot.md#27---boot-scripts) can be modified. It is also possible to generate a script from scratch and execute it in U-Boot.
 
 The following command can be used to generate an executable script `custom_script.scr` from the source file `script_source.txt`:
 ```
