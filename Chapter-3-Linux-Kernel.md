@@ -450,10 +450,12 @@ The shown device tree contains the following:
 * Three child nodes: `cpus`, `serial` and `i2c`
 * Node `cpus` contains the following children: `cpu@0` and `cpu@1`
 * Node i2c contains the following children: `rtc@58`
-Every node must have a name in the form `<name>[@<address>]`. The example device tree above contains following nodes:
+Every node must have a name in the form `<name>[@<address>]`. 
+
+    The example device tree above contains the following nodes:
 * cpus
-* cou@0
-* cou@1
+* cpu@0
+* cpu@1
 * serial@101f0000
 * i2c@e0005000
 * rtc@58
