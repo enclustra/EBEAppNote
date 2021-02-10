@@ -36,7 +36,7 @@ The downloaded reference design can be modified according to the users specifica
     - [3.2 Configuration](Chapter-3-Linux-Kernel.md#32---configuration)
     - [3.3 Add an existing driver example](Chapter-3-Linux-Kernel.md#33---add-an-existing-driver-example)
     - [3.4 Create and add a custom driver](Chapter-3-Linux-Kernel.md#34---create-and-add-a-custom-driver)
-    - [3.5 Device tree](Chapter-3-Linux-Kernel.md#35---deviec-tree)
+    - [3.5 Device tree](Chapter-3-Linux-Kernel.md#35---device-tree)
     - [3.6 Additional information](Chapter-3-Linux-Kernel.md#36---additional-information)
 * [4 - Buildroot](./Chapter-4-Buildroot.md)
     - [4.1 Root file system](Chapter-4-Buildroot.md#41---root-file-system)
