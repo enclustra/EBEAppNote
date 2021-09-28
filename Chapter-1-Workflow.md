@@ -4,17 +4,20 @@ This chapter describes the basic workflow for Xilinx and Intel SoC.
 ## 1.1 - Modules equipped with Xilinx SoC
 
 ### 1.1.1 Required files
+
+The following files are not generated with EBE and need to be created manually. EBE contains defaults for all files, which contain the basic functionality to boot Linux. If any modification to these files is required, they can be created as described below and added to EBE.
+
 * **FPGA bitstream (fpga.bit)**
   
   The FPGA bitstream needs to be generated in Xilinx Vivado according to section **FPGA Bitstream Generation** of the reference design manual of the target module.
 
 * **First stage boot loader (fsbl.elf)**
   
-  The FSBL binary is generated in Xilinx SDK according to section **First Stage Boot Loader (FSBL) Application** of the reference design manual.
+  The FSBL binary is generated automatically when the hardware platform is generated in Vitis. Please follow the steps of the reference design user manual to create and build the platform.
 
-* **PMU firmware (pmu.elf)**
+* **PMU firmware (pmufw.elf)**
   
-  Enclustra modules equipped with a Xilinx Ultrascale+ MPSoC device require a PMU firmware. This PMU firmware can be built in Xilinx SDK in the same manner as the FSBL. A link with the description of how to build the PMU Firmware can be found in section [1.3](Chapter-1-Workflow.md#13-additional-information).
+  Enclustra modules equipped with a Xilinx Ultrascale+ MPSoC device require a PMU firmware. This PMU firmware is also generated automatically during hardware platform build in Vitis. A link with the description of how to build the PMU Firmware can be found in section [1.3](Chapter-1-Workflow.md#13-additional-information).
 
 * **ARM Trusted Firmware (bl31.elf)**
   
@@ -26,14 +29,14 @@ Once the FPGA bitstream and the needed binaries are built, the required boot fil
 - Clone the [bsp-xilinx git repository](https://github.com/enclustra-bsp/bsp-xilinx)
 - Navigate to the root directory of the previously cloned repository
 - Start the `build.sh` script to generate a Linux build for the target module
-- In the `Setup paths for custom binaries` menu set the path to the manually generated first stage bootloader (fsbl.elf) and the path to the manually generated FPGA bitstream (fpga.bit). For Enclustra modules equipped with Xilinx Ultrascale+ MPSoC devices, the PMU firmware (pmu.elf) is also required.
+- In the `Setup paths for custom binaries` menu set the path to the manually generated first stage bootloader (fsbl.elf) and the path to the manually generated FPGA bitstream (*.bit, in this example Mercury_XU9_ST1.bit). For Enclustra modules equipped with Xilinx Ultrascale+ MPSoC devices, the PMU firmware (pmu.elf) is also required. Leave the paths on default to use the provided binaries, which contain the basic functionality to boot Linux.
 
     ![Selection Menu for Custom Binaries](./figures/Chapter-1-1-2_Figure-1_SelectionMenuForCustomBinaries.png)
 
 - After the build was successful, the generated binaries can be found in the output directory
 
 If the binaries have been updated but no other changes occured in the code (for example for Linux or Rootfs) or in the processing system that would require updating the device tree, it is possible to regenerate the `boot.bin` file without the build script. The tool used to generate the `boot.bin` file is located at
-`<path_to_build_environment>/bin/mkbootimage/`. The steps required to regenerate the boot binary are:
+`<path_to_build_environment>/bin/bootgen/`. The steps required to regenerate the boot binary are:
 
 - Copy the first stage bootloader to the output directory and rename it to `fsbl.elf` (for example to `out_20180914164627_Zynq-Ultrascale+_Mercury_XU5_Mercury_PE1_MMC`)
 - Copy the FPGA bitstream to the output directory and rename it to `fpga.bit`
@@ -41,11 +44,11 @@ If the binaries have been updated but no other changes occured in the code (for 
 - Go to the output directory and execute the following line to generate the `boot.bin` according to the instructions in the `boot.bif` file:
   - For Enclustra modules equipped with Zynq-7000 SoC devices:
     ```
-    ../bin/mkbootimage/mkbootimage boot.bif boot.bin
+    ../bin/bootgen/bootgen -arch zynq -image boot.bif -w -o boot.bin
     ```
   - For Enclustra modules equipped with Xilinx Ultrascale+ MPSoC devices
     ```
-    ../bin/mkbootimage/mkbootimage --zynqmp boot.bif boot.bin
+    ../bin/bootgen/bootgen -arch zynqmp -image boot.bif -w -o boot.bin
     ```
 - The newly generated `boot.bin` can be found in the output directory
 

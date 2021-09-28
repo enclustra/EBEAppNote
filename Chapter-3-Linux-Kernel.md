@@ -51,22 +51,88 @@ The following trees show the folder structure starting from top level directory 
             │       │   └── xilinx_zynq_defconfig 
             │       └── boot
             │           └── dts
-            │               ├── zynq-mercury-zx1.dts
-            │               ├── zynq-mars-zx2.dts
-            │               ├── zynq-mars-zx3.dts
-            │               ├── zynq-mercury-zx5.dts
-            │               └── zynq-cosmos-xzq10.dts
+            │               ├── zynq_enclustra_common.dtsi
+            │               ├── zynq_enclustra_cosmos_xzq10.dtsi
+            │               ├── zynq_enclustra_mars_eb1.dtsi
+            │               ├── zynq_enclustra_mars_pm3.dtsi
+            │               ├── zynq_enclustra_mars_st3.dtsi
+            │               ├── zynq_enclustra_mars_zx2.dtsi
+            |               ├── MA-ZX2-10-2I-D9.dtsi
+            |               ├── MA-ZX2-20-2I-D9.dtsi
+            │               ├── zynq_enclustra_mars_zx3.dtsi
+            |               ├── MA-ZX3-20-1C-D9.dtsi
+            │               ├── MA-ZX3-20-2I-D10.dtsi
+            │               ├── zynq_enclustra_mercury_pe1.dtsi
+            │               ├── zynq_enclustra_mercury_st1.dtsi
+            │               ├── zynq_enclustra_mercury_zx1.dtsi
+            │               ├── ME-ZX1-30-2I-D10.dtsi
+            │               ├── ME-ZX1-35-1I-D10.dtsi
+            │               ├── ME-ZX1-45-2I-D10-P.dtsi
+            │               ├── zynq_enclustra_mercury_zx5.dtsi
+            |               ├── ME-ZX5-15-2I-D10.dtsi
+            |               ├── ME-ZX5-30-1I-D10.dtsi
+            |               ├── ME-ZX5-30-3C-D10.dtsi
+            │               ├── zynq_enclustra_nand_parts.dtsi
+            │               ├── zynq-enclustra-qspi-10_15_20.dtsi
+            │               ├── zynq-enclustra-qspi-30.dtsi
+            │               ├── zynq-enclustra-qspi-35_45.dtsi
+            │               └── zynq_enclustra_qspi_parts.dtsi
             │   └── arm64
             │       ├── configs
             │       │   └── xilinx_zynqmp_defconfig 
             │       └── boot
             │           └── dts
             │               └── xilinx
-            │                   ├── zynqmp-enclustra-xu1.dts
-            │                   ├── zynqmp-enclustra-xu3.dts
-            │                   ├── zynqmp-enclustra-xu5.dts
-            │                   ├── zynqmp-enclustra-xu7.dts
-            │                   └── zynqmp-enclustra-xu8.dts
+            │                   ├── zynqmp_enclustra_common.dtsi
+            │                   ├── zynqmp_enclustra_mars_eb1.dtsi
+            │                   ├── zynqmp_enclustra_mars_st3.dtsi
+            │                   ├── zynqmp_enclustra_mars_xu3.dtsi
+            |                   ├── MA-XU3-2CG-1E-D10.dtsi
+            |                   ├── MA-XU3-2EG-1I-D10.dtsi
+            |                   ├── MA-XU3-3EG-2I-D11.dtsi
+            │                   ├── zynqmp_enclustra_mercury_pe1.dtsi
+            │                   ├── zynqmp_enclustra_mercury_st1.dtsi
+            │                   ├── zynqmp_enclustra_mercury_xu1.dtsi
+            |                   ├── ME-XU1-15EG-1E-D12E-G1.dtsi
+            |                   ├── ME-XU1-15EG-2I-D12E.dtsi
+            |                   ├── ME-XU1-15EG-2I-D12E-G1.dtsi
+            |                   ├── ME-XU1-6CG-1E-D11E.dtsi
+            |                   ├── ME-XU1-6CG-1E-D11E-G1.dtsi
+            |                   ├── ME-XU1-6EG-1I-D11E.dtsi
+            |                   ├── ME-XU1-6EG-1I-D11E-G1.dtsi
+            |                   ├── ME-XU1-9EG-1E-D11E-G1.dtsi
+            |                   ├── ME-XU1-9EG-2I-D12E.dtsi
+            |                   ├── ME-XU1-9EG-2I-D12E-G1.dtsi
+            |                   ├── ME-XU1-9EG-3E-D12E.dtsi
+            │                   ├── zynqmp_enclustra_mercury_xu5.dtsi
+            |                   ├── ME-XU5-2CG-1E-D10H.dtsi
+            |                   ├── ME-XU5-2EG-1I-D11E.dtsi
+            |                   ├── ME-XU5-3EG-2I-D11E.dtsi
+            |                   ├── ME-XU5-4CG-1E-D11E-G1.dtsi
+            |                   ├── ME-XU5-4EV-1I-D11E.dtsi
+            |                   ├── ME-XU5-4EV-1I-D11E-G1.dtsi
+            |                   ├── ME-XU5-5EV-1E-D11E.dtsi
+            |                   ├── ME-XU5-5EV-2I-D12E.dtsi
+            |                   ├── ME-XU5-5EV-2I-D12E-G1.dtsi
+            |                   ├── ME-XU5-5EV-3E-D13E.dtsi
+            │                   ├── zynqmp_enclustra_mercury_xu7.dtsi
+            |                   ├── ME-XU7-15EG-2I-D12E.dtsi
+            |                   ├── ME-XU7-6EG-1I-D11E.dtsi
+            |                   ├── ME-XU7-9EG-2I-D12E.dtsi
+            │                   ├── zynqmp_enclustra_mercury_xu8.dtsi
+            |                   ├── ME-XU8-4CG-1E-D11E.dtsi
+            |                   ├── ME-XU8-5EV-1I-D12E.dtsi
+            |                   ├── ME-XU8-7EV-1E-D11E.dtsi
+            |                   ├── ME-XU8-7EV-2I-D12E.dtsi
+            │                   ├── zynqmp_enclustra_mercury_xu9.dtsi
+            |                   ├── ME-XU9-4CG-1E-D11E.dtsi
+            |                   ├── ME-XU9-5EV-1I-D12E-L11.dtsi
+            |                   ├── ME-XU9-7EV-2I-D12E-L11.dtsi
+            │                   ├── zynqmp-enclustra-qspi-15.dtsi
+            │                   ├── zynqmp-enclustra-qspi-2_3_4_5.dtsi
+            │                   ├── zynqmp-enclustra-qspi-6_9.dtsi
+            │                   ├── zynqmp-enclustra-qspi-7.dtsi
+            |                   └── zynq-enclustra-qspi64-parts.dtsi
             ├── Documentation
             │   └── devicetree
             │       └── bindings
@@ -141,18 +207,18 @@ Before the binaries can be built, the environment needs to be prepared according
 For Intel SoC or Xilinx Zynq-7000 SoC:
 ```
 cd <path_to_build_environment>
-export PATH=$PATH:$(pwd)/bin/arm−none−linux−gnueabi−static/bin/
+export PATH=$PATH:$(pwd)/bin/arm-none-linux-gnueabi-static/bin/
 export ARCH=arm
-export CROSS_COMPILE=arm−none−linux−gnueabi−
+export CROSS_COMPILE=arm-none-linux-gnueabi-
 ```
 For Xilinx Zynq Ultrascale+ MPSoC:
 ```
 cd <path_to_build_environment>
-export PATH=$PATH:$(pwd)/bin/aarch64−none−linux−gnueabi/bin/
-export PATH=$PATH:$(pwd)/bin/arm−none−linux−gnueabi−static/bin/
+export PATH=$PATH:$(pwd)/bin/aarch64-none-linux-gnueabi/bin/
+export PATH=$PATH:$(pwd)/bin/arm-none-linux-gnueabi-static/bin/
 export ARCH=arm64
-export CROSS_COMPILE=aarch64−none−linux−gnueabi−
-export CROSS32CC=arm−none−linux−gnueabi−gcc
+export CROSS_COMPILE=aarch64-none-linux-gnueabi-
+export CROSS32CC=arm-none-linux-gnueabi-gcc
 ```
 
 **Build kernel binary**
@@ -187,7 +253,7 @@ The device tree source files are compiled into a device tree blob file by execut
 ```
 make dtbs −j8
 ```
-The built device tree blob files can be found in the same directory as the device tree source files:
+The built device tree blob files can be found in the same directory as the device tree source files in case of Intel devices:
 
 | Altera SoC   |                                                    |
 |--------------|----------------------------------------------------|
@@ -196,21 +262,23 @@ The built device tree blob files can be found in the same directory as the devic
 | Mercury+ SA2 | arch/arm/boot/dts/socfpga_cyclone5_mercury_sa2.dtb |
 | Mercury+ AA1 | arch/arm/boot/dts/socfpga_arria10_mercury_aa1.dtb  |
 
-| Xilinx Zynq-7000 SoC |                                         |
-|----------------------|-----------------------------------------|
-| Mercury ZX1          | arch/arm/boot/dts/zynq-mercury-zx1.dtb  |
-| Mars ZX2             | arch/arm/boot/dts/zynq-mars-zx2.dtb     |
-| Mars ZX3             | arch/arm/boot/dts/zynq-mars-zx3.dtb     |
-| Mercury ZX5          | arch/arm/boot/dts/zynq-mercury-zx5.dtb  |
-| Cosmos XZQ10         | arch/arm/boot/dts/zynq-cosmos-xzq10.dtb |
+For Xilinx devices EBE generates a file (`enclustra_generated.dts`) which combines all necessary `.dtsi` files. After a build the device tree blob, which is then called `enclustra_generated.dtb` is located in `arch/arm/boot/dts` or `arch/arm64/boot/dts/xilinx` respectively.
+As an example a file generated with the build script is shown here:
+```C
+/* AUTOGENERATED FILE - DO NOT MODIFY */
+/* This file is created by Enclustra Build Environment */
 
-| Xilinx Zynq Ultrascale+ MPSoC |                                                     |
-|-------------------------------|-----------------------------------------------------|
-| Mercury+ XU1                  | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu1.dtb |
-| Mars XU3                      | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu3.dtb |
-| Mercury XU5                   | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu5.dtb |
-| Mercury+ XU7                  | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu7.dtb |
-| Mercury+ XU8                  | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu8.dtb |
+/dts-v1/;
+
+#include "ME-XU1-6CG-1E-D11E.dtsi"
+#include "zynqmp_enclustra_mercury_st1.dtsi"
+#include "zynqmp-enclustra-qspi-6_9.dtsi"
+```
+In order to create the device tree blob manually, a file with the correct device tree include files needs to be created and compiled. Either the same name is used for the file (`enclustra_generated.dts`) or a custom name is used. If a custom name is used, the Makefile in the device tree directory needs to be adjusted accordingly and this line needs to be commented out or deleted.
+
+```C
+dtb-$(CONFIG_ARCH_ZYNQMP) += enclustra_generated.dtb
+```
 
 **Build kernel modules**
 
@@ -495,21 +563,41 @@ The following lists show the device tree source files of all Enclustra SoC modul
 | Mercury+ SA2 | arch/arm/boot/dts/socfpga_cyclone5_mercury_sa2.dts |
 | Mercury+ AA1 | arch/arm/boot/dts/socfpga_arria10_mercury_aa1.dts  |
 
-| Xilinx Zynq-7000 SoC |                                         |
-|----------------------|-----------------------------------------|
-| Mercury ZX1          | arch/arm/boot/dts/zynq-mercury-zx1.dts  |
-| Mars ZX2             | arch/arm/boot/dts/zynq-mars-zx2.dts     |
-| Mars ZX3             | arch/arm/boot/dts/zynq-mars-zx3.dts     |
-| Mercury ZX5          | arch/arm/boot/dts/zynq-mercury-zx5.dts  |
-| Cosmos XZQ10         | arch/arm/boot/dts/zynq-cosmos-xzq10.dts |
+| Xilinx Zynq-7000 SoC    |                                                                                                                                      |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Common file for all SoC | zynq_enclustra_common.dtsi                                                                                                           |
+| Mars ZX2                | zynq_enclustra_mars_zx2.dtsi <br> MA-ZX2-10-2I-D9.dtsi <br> MA-ZX2-20-2I-D9.dtsi                                                     |
+| Mars ZX3                | zynq_enclustra_mars_zx3.dtsi <br> MA-ZX3-20-1C-D9.dtsi <br> MA-ZX3-20-2I-D10.dtsi                                                    |
+| Mercury ZX1             | zynq_enclustra_mercury_zx1.dtsi <br> ME-ZX1-30-2I-D10.dtsi <br> ME-ZX1-35-1I-D10.dtsi <br> ME-ZX1-45-2I-D10-P.dtsi                   |
+| Mercury ZX5             | zynq_enclustra_mercury_zx5.dtsi <br> ME-ZX5-15-2I-D10.dtsi <br> ME-ZX5-30-1I-D10.dtsi <br> ME-ZX5-30-3C-D10.dtsi                     |
+| Cosmos XZQ10            | zynq_enclustra_cosmos_xzq10.dtsi <br> CO-XZQ10-111-I.dtsi <br> CO-XZQ10-262-I.dtsi <br> CO-XZQ10-740-I.dtsi <br> CO-XZQ10-750-I.dtsi |
 
-| Xilinx Zynq Ultrascale+ MPSoC |                                                     |
-|-------------------------------|-----------------------------------------------------|
-| Mercury+ XU1                  | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu1.dts |
-| Mars XU3                      | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu3.dts |
-| Mercury XU5                   | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu5.dts |
-| Mercury+ XU7                  | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu7.dts |
-| Mercury+ XU8                  | arch/arm64/boot/dts/xilinx/zynqmp-enclustra-xu8.dts |
+| Baseboard specific dtsi |                                 |
+|-------------------------|---------------------------------|
+| Mars EB1                | zynq_enclustra_mars_eb1.dtsi    |
+| Mars PM3                | zynq_enclustra_mars_pm3.dtsi    |
+| Mars ST3                | zynq_enclustra_mars_st3.dtsi    |
+| Mars ST3                | zynq_enclustra_mars_st3.dtsi    |
+| Mercury ST1             | zynq_enclustra_mercury_st1.dtsi |
+| Mercury PE1             | zynq_enclustra_mercury_pe1.dtsi |
+
+| Xilinx Zynq Ultrascale+ MPSoC |                                                                                |
+|-------------------------------|--------------------------------------------------------------------------------|
+| Common file for all MPSoC     | zynqmp_enclustra_common.dtsi                                                   |
+| Mars XU3                      | zynqmp_enclustra_mars_xu3.dtsi <br> MA-XU3-2CG-1E-D10.dtsi <br> MA-XU3-2EG-1I-D10.dtsi <br> MA-XU3-3EG-2I-D11.dtsi |
+| Mercury+ XU1                  | zynqmp_enclustra_mercury_xu1.dtsi <br> ME-XU1-15EG-1E-D12E-G1.dtsi <br> ME-XU1-15EG-2I-D12E.dtsi <br> ME-XU1-15EG-2I-D12E-G1.dtsi <br> ME-XU1-6CG-1E-D11E.dtsi <br> ME-XU1-6CG-1E-D11E-G1.dtsi <br> ME-XU1-6EG-1I-D11E.dtsi <br> ME-XU1-6EG-1I-D11E-G1.dtsi <br> ME-XU1-9EG-1E-D11E-G1.dtsi <br> ME-XU1-9EG-2I-D12E.dtsi <br> ME-XU1-9EG-2I-D12E-G1.dtsi <br> ME-XU1-9EG-3E-D12E.dtsi |
+| Mercury XU5                   | zynqmp_enclustra_mercury_xu5.dtsi <br> ME-XU5-2CG-1E-D10H.dtsi <br> ME-XU5-2EG-1I-D11E.dtsi <br> ME-XU5-3EG-2I-D11E.dtsi <br> ME-XU5-4CG-1E-D11E-G1.dtsi <br> ME-XU5-4EV-1I-D11E.dtsi <br> ME-XU5-4EV-1I-D11E-G1.dtsi <br> ME-XU5-5EV-1E-D11E.dtsi <br> ME-XU5-5EV-2I-D12E.dtsi <br> ME-XU5-5EV-2I-D12E-G1.dtsi <br> ME-XU5-5EV-3E-D13E.dtsi |
+| Mercury+ XU7                  | zynqmp_enclustra_mercury_xu7.dtsi <br> ME-XU7-15EG-2I-D12E.dtsi <br> ME-XU7-6EG-1I-D11E.dtsi <br> ME-XU7-9EG-2I-D12E.dtsi |
+| Mercury+ XU8                  | zynqmp_enclustra_mercury_xu8.dtsi <br> ME-XU8-4CG-1E-D11E.dtsi <br> ME-XU8-5EV-1I-D12E.dtsi <br> ME-XU8-7EV-1E-D11E.dtsi <br> ME-XU8-7EV-2I-D12E.dtsi |
+| Mercury+ XU9                  | zynqmp_enclustra_mercury_xu9.dtsi <br> ME-XU9-4CG-1E-D11E.dtsi <br> ME-XU9-5EV-1I-D12E-L11.dtsi <br> ME-XU9-7EV-2I-D12E-L11.dtsi |
+
+| Baseboard specific dtsi |                                   |
+|-------------------------|-----------------------------------|
+| Mars EB1                | zynqmp_enclustra_mars_eb1.dtsi    |
+| Mars ST3                | zynqmp_enclustra_mars_st3.dtsi    |
+| Mars ST3                | zynqmp_enclustra_mars_st3.dtsi    |
+| Mercury ST1             | zynqmp_enclustra_mercury_st1.dtsi |
+| Mercury PE1             | zynqmp_enclustra_mercury_pe1.dtsi |
 
 ### 3.5.3 - Device Tree Compiler (DTC)
 The device tree compiler is a helpful tool to verify the device tree blob file. It can be used to reverse compile the device tree blob file back into a device tree string file, or it can be used in other direction to compile a modified device tree string file back into a binary blob file.
@@ -525,49 +613,164 @@ dtc −I dts −O dtb −o devicetree.dtb devicetree.dts
 Note that the device tree compiler can’t handle `.h` include files, therefore it can’t be used to compile the provided device tree files in the `arch/arm64/boot/dts/` or the `arch/arm/boot/dts/` directory.
 
 ### 3.5.4 - Add a custom base board
-To run Linux on a custom base board, a new device tree file is required which includes all peripherals provided by the base board. The easiest way to create such a device tree file is to copy the existing device tree source file of an Enclustra base board and modify it. Because all peripherals located on the module (memories, ETH / USB PHY) are already provided in the device tree file, usually only a few changes are needed. The location of the source files for the used Enclustra module can be found in section [3.5.2](#352LocationOfDeviceTreeSourceFiles).
+To run Linux on a custom base board, a new device tree include file is required which includes all peripherals provided by the base board. The easiest way to create such a device tree file is to copy the existing device tree source file of an Enclustra base board and modify it. Because all peripherals located on the module (memories, ETH / USB PHY) are already provided in the respective device tree include file, usually only a few changes are needed. The location of the source files for the used Enclustra module can be found in section [3.5.2](#352LocationOfDeviceTreeSourceFiles).
 
-All device tree source files containing include files with predefined periperals of the SoC. For example the device tree file used for Mars XU3 includes `zynqmp.dtsi`. To add a peripheral, the main device tree file only needs to enable the peripheral defined in `zynqmp.dtsi` by changing its status from `disabled` to `okay` and setting the correct parameters. For example in `zynqmp.dtsi` the gem3 Ethernet controller is defined as follows:
-```
-gem3: ethernet@ff0e0000 {
-    compatible = ”cdns,zynqmp−gem”;
-    status = ”disabled”;
-    interrupt−parent = <&gic>;
-    interrupts = <0 63 4>, <0 63 4>;
-    reg = <0x0 0xff0e0000 0x0 0x1000>;
-    clock−names = ”pclk”, ”hclk”, ”tx_clk”;
-    #address−cells = <1>;
-    #size−cells = <0>;
-    #stream−id−cells = <1>;
-    iommus = <&smmu 0x877>;
-    power−domains = <&pd_eth3>;
+The generated device tree source file contains include files with predefined periperals of the MPSoC. For example the automatically generated device tree file used for the Mars XU3 includes the baseboard specific include file `zynqmp_enclustra_mars_st3.dtsi`.
+```C
+#include <dt-bindings/phy/phy.h>
+
+/* ULPI SMSC USB3320 */
+&usb0 {
+	status = "okay";
+};
+
+&dwc3_0 {
+	status = "okay";
+	dr_mode = "host";
+	snps,usb3_lpm_capable;
+	phy-names = "usb3-phy";
+	phys = <&lane2 PHY_TYPE_USB3 0 2 100000000>;
+	maximum-speed = "super-speed";
+};
+
+/* SD1 with level shifter */
+&sdhci1 {
+	status = "okay";
+	no-1-8-v;	/* for 1.0 silicon */
+	wp-inverted;
+	xlnx,mio_bank = <1>;
+	max-frequency = <26000000>;
+};
+
+&xlnx_dpdma {
+	status = "okay";
+};
+
+&zynqmp_dpsub {
+	status = "okay";
+	phy-names = "dp-phy0", "dp-phy1";
+	phys = <&lane1 PHY_TYPE_DP 0x0 0x3 27000000>, <&lane0 PHY_TYPE_DP 0x1 0x3 27000000>;
+	dma-names = "vid0", "vid1", "vid2", "gfx0";
+	dmas = <&xlnx_dpdma 0>, <&xlnx_dpdma 1>, <&xlnx_dpdma 2>, <&xlnx_dpdma 3>;
+};
+
+&zynqmp_dp_snd_pcm0 {
+    status = "disabled";
+};
+
+&zynqmp_dp_snd_pcm1 {
+    status = "disabled";
+};
+
+&zynqmp_dp_snd_card0 {
+    status = "disabled";
+};
+
+&zynqmp_dp_snd_codec0 {
+    status = "disabled";
 };
 ```
-To add the gem3 Ethernet controller to the device tree, the following entry needs to be added to the main device tree file. The missing parameter which needs to be set can be found in the documentation of the kernel (`<path_to_build_environment>/sources/xilinx-linux/Documentation/devicetree/bindings`). For example the gem3 Ethernet controller needs to know which PHY is connected to it, and which mode will be used. All other parameters like used driver and base address are already set in the include file.
+To add a peripheral, the correct device tree include file needs to be manipulated. The Enclustra device tree include files are separated into several device tree include files. These are module and baseboard specific. For example for the Mars XU3 the main files are the module specific ones, e.g. `MA-XU3-2CG-1E-D10.dtsi`. This file itself then also has several include files:
+```C
+#include "zynqmp.dtsi"
+#include "zynqmp-clk-ccf.dtsi"
+#include "zynqmp_enclustra_common.dtsi"
+#include "zynqmp_enclustra_mars_xu3.dtsi"
+
+/ {
+    model = "Enclustra XU3-2CG-1E-D10 SOM";
+
+	memory {
+		device_type = "memory";
+		reg = <0x0 0x0 0x0 0x3ff00000>;
+	};
+
+	cpus {
+		/delete-node/ cpu@2 ;
+		/delete-node/ cpu@3 ;
+	};
+
+/******************** PL entries **********************/
+
+	amba_pl: amba_pl@0 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "simple-bus";
+		ranges ;
+		led: gpio@80000000 {
+			#gpio-cells = <3>;
+			clock-names = "s_axi_aclk";
+			clocks = <&zynqmp_clk 71>;
+			compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+			gpio-controller ;
+			reg = <0x0 0x80000000 0x0 0x10000>;
+			xlnx,all-inputs = <0x0>;
+			xlnx,all-inputs-2 = <0x0>;
+			xlnx,all-outputs = <0x1>;
+			xlnx,all-outputs-2 = <0x0>;
+			xlnx,dout-default = <0x00000001>;
+			xlnx,dout-default-2 = <0x00000000>;
+			xlnx,gpio-width = <0x1>;
+			xlnx,gpio2-width = <0x20>;
+			xlnx,interrupt-present = <0x0>;
+			xlnx,is-dual = <0x0>;
+			xlnx,tri-default = <0xFFFFFFFF>;
+			xlnx,tri-default-2 = <0xFFFFFFFF>;
+		};
+    };
+
+/******************** PL entries **********************/
+
+};
 ```
-&gem3 {
+The `PL entries` section is based on the PL peripherals present in the Enclustra reference design and can be deleted if they are not used in a custom design.
+The baseboard specific file is then automatically added during EBE build when using the `build.sh` script.
+All relevant device tree include files then need to be combined in a custom device tree source file similar to `enclustra_generated.dts`, e.g. `custom_design.dts` replacing the Enclustra baseboard specific `dtsi` file with the custom `dtsi` file.
+```C
+/dts-v1/;
+
+#include "MA-XU3-2CG-1E-D10.dtsi"
+#include "custom_baseboard.dtsi"
+#include "zynqmp-enclustra-qspi-2_3_4_5.dtsi"
+```
+The newly created device tree source file needs to be added to the existing Makefile which can be found in the same folder as the device tree source file of the selected module.
+
+For example, to add a new baseboard for a Mars XU3 module, the device tree source file needs to be added to the Makefile located at `<path_to_build_environment>/sources/xilinx-linux/arch/arm64/boot/dts/xilinx/Makefile`. The following example shows the newly added `custom_design.dtb` in `<path_to_build_environment>/sources/xilinx-linux/arch/arm64/boot/dts/xilinx/Makefile`.
+```C
+# SPDX-License-Identifier: GPL-2.0
+dtb-$(CONFIG_ARCH_ZYNQMP) += avnet-ultra96-rev1.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1232-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1254-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1751-xm015-dc1.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1751-xm016-dc2.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1751-xm017-dc3.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1751-xm018-dc4.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zc1751-xm019-dc5.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu100-revC.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu102-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu102-revB.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += enclustra_generated.dtb    //Remove this line
+dtb-$(CONFIG_ARCH_ZYNQMP) += custom_design.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu102-rev1.0.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu104-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu104-revC.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu106-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu111-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu1275-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu1275-revB.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu1285-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu208-revA.dtb
+dtb-$(CONFIG_ARCH_ZYNQMP) += zynqmp-zcu216-revA.dtb
+```
+To add the gem0 Ethernet controller to the device tree, the following entry needs to be added to the custom baseboard device tree tree file. The missing parameter which needs to be set can be found in the documentation of the kernel (`<path_to_build_environment>/sources/xilinx-linux/Documentation/devicetree/bindings`). For example the gem0 Ethernet controller needs to know which PHY is connected to it, and which mode will be used. All other parameters like used driver and base address are already set in the include file.
+```
+&gem0 {
     status = ”okay”;
     phy−mode = ”rgmii−id”;
     phy−handle = <&phy3>;
 };
 ```
-The newly created device tree source file needs to be added to the existing Makefile which can be found in the same folder as the device tree source file of the selected module. 
 
-For example, to add a new baseboard for a Mars ZX3 module, the device tree source file needs to be added to the Makefile located at `<path_to_build_environment>/sources/xilinx-linux/arch/arm/boot/dts/Makefile`. The following example shows the newly added `custom_baseboard.dtb` in `<path_to_build_environment>/sources/xilinx-linux/arch/arm/boot/dts/Makefile`. The new device tree entry must be added to the correct `CONFIG_*` switch section:
-```
-dtb−$(CONFIG_ARCH_ZYNQ) += \
-zynq−mars−zx2.dtb \
-zynq−mars−zx3−sta.dtb \
-custom_baseboard.dtb \
-zynq−mars−zx3−sta−nand.dtb \
-zynq−mars−zx3.dtb \
-zynq−mars−zx3−nand.dtb \
-zynq−mercury−zx1.dtb \
-zynq−mercury−zx1−nand.dtb \
-zynq−mercury−zx5.dtb \
-zynq−mercury−zx5−nand.dtb \
-zynq−cosmos−xzq10.dtb \
-```
 Section [3.2.2](#322BuildKernelWithoutEnclustraBuildScript) explains how to build the device tree.
 ## 3.6 - Additional information
 * [Building kernel modules](https://www.kernel.org/doc/Documentation/kbuild/modules.txt)
